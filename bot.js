@@ -20,7 +20,7 @@ bot.on('message', msg => {
 				msg.channel.send('pong');
 			break;
 			case 'website':
-				msg.channel.send('github.com/gittingcomputey');
+				msg.channel.send('https://github.com/gittingcomputey/moistbot/blob/main/README.md');
 			break;
 			case 'info':
 			const infoembed = new MessageEmbed()
