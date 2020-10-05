@@ -73,7 +73,7 @@ bot.on('message', msg => {
 
 // Embedded message
 bot.on('message', msg => {
-  if (msg.content === 'embed') {
+  	if (msg.content === 'embed') {
 		// Info about MaximumMoist server -  message embed
     const infoembed = new MessageEmbed()
       .setTitle('MaximumMoist')
@@ -84,14 +84,15 @@ bot.on('message', msg => {
 });
 
 
-//attachment
-// bot.on('message', message => {
-//  if (message.content === 'intro') {
-    // Create the attachment using MessageAttachment
-//    const introVid = new MessageAttachment('./vids/moist-meter.mp4');
-//    message.channel.send(introVid);
-//  }
-// });
+//Send MaximumMoist intro video
+bot.on('message', msg => {
+	if (msg.content === 'intro!') {
+
+	 //   Create the attachment using MessageAttachment
+    const introVid = new MessageAttachment('./vids/moist-meter.mp4');
+   	msg.channel.send(introVid);
+  }
+ });
 
 // Pic Logic
 bot.on('message', msg => {

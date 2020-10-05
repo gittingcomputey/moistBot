@@ -90,3 +90,6 @@ List of pic commands
 
 + gw
  (Bot responds with "Super moist!")
+
++ intro!
+ (Bot responds with MaximumMoist intro video)
