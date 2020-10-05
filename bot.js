@@ -26,16 +26,23 @@ bot.on('message', msg => {
 			const infoembed = new MessageEmbed()
       				.setTitle('moistBot')
       				.setColor('#262626')
-      				.setDescription('Hello, humans. I am Matteo\'s bot. My name is moistBot, and I was created by gettingComputey');
+      				.setDescription('Hello, humans. My name is moistBot and I am Matteo\'s bot. You can find my command info here: https://github.com/gittingcomputey/moistbot/blob/main/README.md');
     				msg.channel.send(infoembed);
 			break;
 		}
 });
 
+// If someone mentions the bot, send the command url.
+bot.on('message', msg => {
+        if (msg.content === 'moistBot' || msg.content === 'bot commands') {
+                msg.reply('Hello, human. You summoned? You can find my commands here: https://github.com/gittingcomputey/moistbot/blob/main/README.md');
+        }
+ });
+
 // Say hello when someone says hi! or hello!
 bot.on('message', msg => {
 	if (msg.content === 'hi Matteo!' || msg.content === 'hello!') {
-		msg.reply('hello! A moist hello.');
+		msg.reply('I also say hello! A moist hello.');
 	}
  });
 
@@ -76,6 +83,15 @@ bot.on('message', msg => {
   }
 });
 
+
+//attachment
+// bot.on('message', message => {
+//  if (message.content === 'intro') {
+    // Create the attachment using MessageAttachment
+//    const introVid = new MessageAttachment('./vids/moist-meter.mp4');
+//    message.channel.send(introVid);
+//  }
+// });
 
 // Pic Logic
 bot.on('message', msg => {
@@ -277,6 +293,13 @@ bot.on('message', msg => {
                 const awatching = new MessageAttachment('./images/the_office/all/office-watching.png');
                 msg.channel.send(awatching);
                         break;
+		
+		
+		//
+		case 'fromDB':
+		const fromDB = new MessageAttachment('./images/uploads/tooDamnHigh.jpg');
+		msg.channel.send(fromDB);
+			break;
 		}
 });
 
